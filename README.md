@@ -2,8 +2,7 @@
 
 This repository contains the source files and documentation for a comprehensive Power BI dashboard used to track and analyze **Mobile Sales Performance**.
 
-The live, interactive dashboard can be viewed here:
-➡️ **[https://app.powerbi.com/view?r=eyJrIjoiOWQ4OGI4NDEtZmI0NC00Yjc5LTg1MDgtYTI0N2ZlZDg5NjA0IiwidCI6IjEzMjc0YTYzLTYzNDEtNDQ3Yi1iNTM0LTdkNzRhYWM2MTc5MSJ9]**
+**[Dashboard Link](https://app.powerbi.com/view?r=eyJrIjoiOWQ4OGI4NDEtZmI0NC00Yjc5LTg1MDgtYTI0N2ZlZDg5NjA0IiwidCI6IjEzMjc0YTYzLTYzNDEtNDQ3Yi1iNTM0LTdkNzRhYWM2MTc5MSJ9)**
 
 -----
 
