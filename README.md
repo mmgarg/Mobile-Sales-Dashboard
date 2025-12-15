@@ -1,55 +1,69 @@
-# Power BI Report
+##  Mobile Sales Performance Dashboard
 
-## 🔗 Report Link
+This repository contains the source files and documentation for a comprehensive Power BI dashboard used to track and analyze **Mobile Sales Performance**.
 
-[Click here to view the Power BI Report](https://app.powerbi.com/view?r=eyJrIjoiOWQ4OGI4NDEtZmI0NC00Yjc5LTg1MDgtYTI0N2ZlZDg5NjA0IiwidCI6IjEzMjc0YTYzLTYzNDEtNDQ3Yi1iNTM0LTdkNzRhYWM2MTc5MSJ9)
+The live, interactive dashboard can be viewed here:
+➡️ **[https://app.powerbi.com/view?r=eyJrIjoiOWQ4OGI4NDEtZmI0NC00Yjc5LTg1MDgtYTI0N2ZlZDg5NjA0IiwidCI6IjEzMjc0YTYzLTYzNDEtNDQ3Yi1iNTM0LTdkNzRhYWM2MTc5MSJ9]**
 
----
+-----
 
-## 📄 Description
+### 🎯 Project Goal
 
-This Power BI report provides key business insights and data visualizations for strategic and operational decision-making. It covers metrics such as revenue, performance trends, and detailed breakdowns by region, category, and time.
+The project was designed to:
 
----
+1.  **Consolidate** sales data from four disparate monthly Excel files.
+2.  **Develop key performance indicators (KPIs)** and detailed visualizations to identify trends and regional performance.
+3.  Provide a tool for analyzing **time-series trends** and **geographical sales distribution**.
 
-## 🛠 Built With
+### 📊 Key Features and Metrics
 
-- **Tool:** Microsoft Power BI  
-- **Data Sources:** Excel
+The dashboard provides deep insights via the following:
 
----
+| Metric (DAX) | Value (From Dashboard) | Insight Highlighted |
+| :--- | :--- | :--- |
+| **Total Revenue** | **769 Million** | Overall sales achievement. |
+| **Total Quantity Sold** | **19 Thousand** | Total volume of units sold. |
+| **Total Orders/Transactions** | **40 Thousand** | Number of distinct sales events. |
+| **Average Deal Size** | *$19,225* | Sales efficiency measure. |
 
-## 📊 Report Sections
+**Key Visual Insights:**
 
-| Section | Description |
-|---------|-------------|
-| Overview | High-level KPIs and summary metrics |
-| Sales Analysis | Trends over time, top products |
-| Regional Breakdown | Performance by geographic region |
-| Forecasting | Predictive analytics using past data |
-| Filters & Slicers | Interactive filtering options for users |
+  * **Geospatial Analysis:** A map visualization shows sales concentration in major Indian cities like Delhi, Mumbai, and Bangalore.
+  * **Time Series Trend:** A line chart tracks **Total Quantity by Month** (Jan-Dec) for trend analysis.
+  * **Payment Breakdown:** A pie chart illustrates the distribution of transactions across payment methods (e.g., UPI, Debit/Credit Card, Cash).
+  * **Brand Performance:** A table and charts showcase top brands (**Apple, OnePlus, Samsung**) by sales volume and transaction count.
 
----
+### 🛠️ Technical Implementation
 
-## 🧭 How to Use
+#### 1\. Data Sources
 
-1. Open the report using the link above.  
-2. Use the filters and slicers to interact with the visuals.  
-3. Hover over charts for detailed data tooltips.  
-4. Export data or screenshots if needed.
+The report utilized four separate Excel files, representing monthly sales data, located in the `/data` folder of this repository.
 
----
+#### 2\. Data Transformation (Power Query M)
 
-## 🔐 Access & Permissions
+  * **File Consolidation:** Used Power Query's 'Combine Binaries' feature to successfully merge the four monthly Excel sheets into one unified fact table.
+  * **Data Cleansing:** **Used Power Query to consolidate and append four separate monthly Excel files, followed by ensuring consistent City and Brand naming conventions.**
 
-- This report is public
-- May require a Power BI login with appropriate access rights.
+#### 3\. Data Modeling (Relationships & DAX)
 
----
+  * **Data Model:** Implemented a robust **Star Schema** with a central sales fact table.
+  * **Time Intelligence:** A dedicated **Calendar/Date Table** was created and linked to the fact table to enable accurate time intelligence (MoM analysis and dynamic monthly filtering).
+  * **Key Measures:** Measures were defined for the primary KPIs, including time-intelligence functions for comparisons and aggregation.
 
-## 🧮 Limitations
+### 📂 Repository Structure
 
-- Data may be delayed depending on the source system refresh schedule.  
-- Visuals are subject to change based on ongoing enhancements.
+```
+├── data/
+│   ├── January_23.xlsx
+│   ├── February_23.xlsx
+│   ├── March_23.xlsx
+│   └── April_23.xlsx
+├── Mobile Sales Dashboard.pbix  <-- The complete Power BI Desktop source file
+└── README.md                   <-- You are here!
+```
 
----
+### ⚙️ How to Use
+
+1.  Clone or download this repository.
+2.  Ensure you have **Power BI Desktop** installed.
+3.  Open the `Mobile Sales Dashboard.pbix` file. The report should connect and refresh the data from the local `data/` folder automatically.
